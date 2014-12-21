@@ -1,5 +1,5 @@
 <script type="text/javascript">
-    RED.nodes.registerType('Interact',{
+    RED.nodes.registerType('Interact_Event',{
         category: 'Marketing',
         color: '#a6bbcf',
         defaults: {
@@ -14,20 +14,18 @@
 			ic: {value:"Banque"},
 			rely: {value:"false"},
 			debug: {value:"true"},
-			ip: {value:"twitter"},
-			number: {value:"1"},
-        },
+		},
         inputs:1,
         outputs:1,
         align: 'right',
         icon: "interact.png",
         label: function() {
-            return this.name||"Interact";
+            return this.name||"Interact_Event";
         }
     });
 </script>
 
-<script type="text/x-red" data-template-name="Interact">
+<script type="text/x-red" data-template-name="Interact_Event">
     <div class="form-row">
         <label for="node-input-name"><i class="icon-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name" value="IBM interact">
@@ -74,17 +72,9 @@
         <input type="text" id="node-input-debug" placeholder="(true|false)" value="true">
     </div>
 	</br>
-	<b>Get Offers</b>
-	<div class="form-row">
-        <label for="node-input-ip"><i class="icon-tag"></i> Interaction Point name</label>
-        <input type="text" id="node-input-ip" placeholder="" value="twitter">
-    </div>
-	<div class="form-row">
-        <label for="node-input-number"><i class="icon-tag"></i> Number requested</label>
-        <input type="text" id="node-input-number" placeholder="" value="1">
-    </div>
+	
 </script>
 
-<script type="text/x-red" data-help-name="Interact">
-    <p>Retrieve NBA from Interact</p>
+<script type="text/x-red" data-help-name="Interact_Event">
+    <p>Post an event to IBM Interact</p>
 </script>

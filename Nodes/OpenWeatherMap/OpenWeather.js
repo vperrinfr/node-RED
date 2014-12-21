@@ -26,9 +26,29 @@ module.exports = function(RED) {
 
 		    res.on('data', function(d) {
 		        console.log('POST result:\n');
-		        process.stdout.write(d);
+		        
+		        //process.stdout.write(d);
 		        msg.weather = d + "";
-				node.send(msg);
+				
+				if (msg.hasOwnProperty("weather")) {
+                if (typeof msg.weather === "string") {
+                    try {
+                        msg.weather = JSON.parse(msg.weather);
+                        node.send(msg);
+                    }
+                    catch(e) { node.log(e+ "\n"+msg.weather); }
+                }
+                else if (typeof msg.weather === "object") {
+                    if (!Buffer.isBuffer(msg.weather) ) {
+                        if (!util.isArray(msg.weather)) {
+                            msg.weather = JSON.stringify(msg.weather);
+                            node.send(msg);
+                        }
+                    }
+                }
+                else { node.log("dropped: "+msg.weather); }
+            }
+				
 				});
 		        //console.log('\n\nPOST completed');   
 		    });
@@ -36,7 +56,7 @@ module.exports = function(RED) {
 		// write the json data
 		reqPost.write("");
 		reqPost.end();
-		console.log('POST Written:\n');
+		
 		reqPost.on('error', function(e) {
 		    //console.log(e);
 		    // info = info + "error : " + e;
