@@ -1,0 +1,39 @@
+<script type="text/javascript">
+    RED.nodes.registerType('RT',{
+        category: 'Silverpop',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value:""},
+            pod: {value:"api0.silverpop.com"},
+            tableID: {value:"38244"}
+        },
+        inputs:1,
+        outputs:0,
+        align: 'right',
+        icon: "silverpop.png",
+        label: function() {
+            return this.name||"RT";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="RT">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <br/>
+    <div class="form-row">
+     <label for="node-input-pod"><i class="icon-tag"></i> Pod Url</label>
+     <input type="text" id="node-input-pod">
+ 	</div>
+ 	<div class="form-row">
+     <label for="node-input-tableID"><i class="icon-tag"></i> Relational Table Id</label>
+     <input type="text" id="node-input-tableID">
+ 	</div>
+		
+</script>
+
+<script type="text/x-red" data-help-name="RT">
+    <p>Insert row in Silverpop Relational database</p>
+</script>

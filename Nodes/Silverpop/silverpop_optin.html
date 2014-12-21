@@ -1,0 +1,39 @@
+<script type="text/javascript">
+    RED.nodes.registerType('Opt-in',{
+        category: 'Silverpop',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value:""},
+            pod: {value:"api0.silverpop.com"},
+            tableID: {value:"38244"}
+        },
+        inputs:1,
+        outputs:0,
+        align: 'right',
+        icon: "silverpop.png",
+        label: function() {
+            return this.name||"RT";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="Opt-in">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <br/>
+    <div class="form-row">
+     <label for="node-input-pod"><i class="icon-tag"></i> Pod URL</label>
+     <input type="text" id="node-input-pod">
+ 	</div>
+ 	<div class="form-row">
+     <label for="node-input-tableID"><i class="icon-tag"></i> Database Id</label>
+     <input type="text" id="node-input-tableID">
+ 	</div>
+		
+</script>
+
+<script type="text/x-red" data-help-name="Opt-in">
+    <p>Do an opt-in of a new Social Contact</p>
+</script>

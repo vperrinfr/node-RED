@@ -1,0 +1,44 @@
+<script type="text/javascript">
+    RED.nodes.registerType('Login',{
+        category: 'Silverpop',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value:""},
+            pod: {value:"api0.silverpop.com"},
+           	login: {value:"vincent.perrin@fr.ibm.com"},
+			password: {value:"S@tp340fr"}
+        },
+        inputs:1,
+        outputs:1,
+        align: 'right',
+        icon: "silverpop.png",
+        label: function() {
+            return this.name||"Silverpop Login";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="Login">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <br/>
+    <div class="form-row">
+     <label for="node-input-pod"><i class="icon-tag"></i> Pod Url</label>
+     <input type="text" id="node-input-pod">
+ 	</div>
+ 	<div class="form-row">
+     <label for="node-input-login"><i class="icon-tag"></i> Login</label>
+     <input type="text" id="node-input-login">
+ 	</div>
+ 	<div class="form-row">
+     <label for="node-input-password"><i class="icon-tag"></i> Password</label>
+     <input type="password" id="node-input-password">
+ 	</div>
+	
+</script>
+
+<script type="text/x-red" data-help-name="Login">
+    <p>Manage authentication on Silverpop & retrieve JsessionID</p>
+</script>

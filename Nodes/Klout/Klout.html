@@ -1,0 +1,35 @@
+<script type="text/javascript">
+    RED.nodes.registerType('Klout',{
+        category: 'Social',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value:""},
+            appkey: {value:"fvqnjbdaqhc7vjxxxjha99x2"}
+        },
+        inputs:1,
+        outputs:1,
+        align: 'right',
+        icon: "klout.png",
+        label: function() {
+            return this.name||"Klout";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="Klout">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <br/>
+ 	<div class="form-row">
+     <label for="node-input-appkey"><i class="icon-tag"></i> Klout API Key</label>
+     <input type="text" id="node-input-appkey">
+ 	</div>
+
+
+</script>
+
+<script type="text/x-red" data-help-name="Klout">
+    <p>Retrieve Klout value of a twitter.</p>
+</script>

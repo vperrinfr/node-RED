@@ -1,0 +1,28 @@
+<script type="text/javascript">
+    RED.nodes.registerType('OpenWeather',{
+        category: 'OpenWeather',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value:""},
+        },
+        inputs:1,
+        outputs:1,
+        align: 'right',
+        icon: "openweathermap_logo.png",
+        label: function() {
+            return this.name||"OpenWeather";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="OpenWeather">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+	
+</script>
+
+<script type="text/x-red" data-help-name="OpenWeather">
+    <p>Manage authentication on Silverpop & retrieve JsessionID</p>
+</script>

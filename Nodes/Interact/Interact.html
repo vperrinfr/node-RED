@@ -1,0 +1,90 @@
+<script type="text/javascript">
+    RED.nodes.registerType('Interact',{
+        category: 'Marketing',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value:""},
+			url: {value:"unicavmdemo"},
+			port: {value:"7001"},
+			session: {value:"1"},
+			ic: {value:"Banque"},
+			AudienceLevel: {value:"individual"},
+			AudienceICName: {value:"Indiv_Id"},
+			AudienceICType: {value:"numeric"},
+			ic: {value:"Banque"},
+			rely: {value:"fales"},
+			debug: {value:"true"},
+			ip: {value:"twitter"},
+			number: {value:"1"},
+        },
+        inputs:1,
+        outputs:1,
+        align: 'right',
+        icon: "interact.png",
+        label: function() {
+            return this.name||"Interact";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="Interact">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name" value="IBM interact">
+    </div>
+	<div class="form-row">
+        <label for="node-input-url"><i class="icon-tag"></i> URL of Interact Server</label>
+        <input type="text" id="node-input-url" placeholder="" value="unicavmdemo">
+    </div>
+	<div class="form-row">
+        <label for="node-input-port"><i class="icon-tag"></i> Port of Interact Server</label>
+        <input type="text" id="node-input-port" placeholder="" value="7001">
+    </div>
+	</br>
+	<b>StartSession</b>
+		
+	<div class="form-row">
+        <label for="node-input-session"><i class="icon-tag"></i> Session_ID</label>
+        <input type="text" id="node-input-session" placeholder="" value="1">
+    </div>
+	<div class="form-row">
+        <label for="node-input-ic"><i class="icon-tag"></i> Interactive Channel name</label>
+        <input type="text" id="node-input-ic" placeholder="" value="Banque">
+    </div>
+	<div class="form-row">
+        <label for="node-input-AudienceLevel"><i class="icon-tag"></i> AudienceLevel</label>
+        <input type="text" id="node-input-AudienceLevel" placeholder="" value="individual">
+    </div>
+	<div class="form-row">
+        <label for="node-input-AudienceICName"><i class="icon-tag"></i> AudienceIC Name</label>
+        <input type="text" id="node-input-AudienceICName" placeholder="" value="Indiv_Id">
+    </div>
+	<div class="form-row">
+        <label for="node-input-AudienceICType"><i class="icon-tag"></i> AudienceIC Type</label>
+        <input type="text" id="node-input-AudienceICType" placeholder="" value="numeric">
+    </div>
+	
+	</br>
+	<div class="form-row">
+        <label for="node-input-rely"><i class="icon-tag"></i> Rely on existing session</label>
+        <input type="text" id="node-input-rely" placeholder="(true|false)" value="false">
+    </div>
+	<div class="form-row">
+        <label for="node-input-debug"><i class="icon-tag"></i> Debug flag</label>
+        <input type="text" id="node-input-debug" placeholder="(true|false)" value="true">
+    </div>
+	</br>
+	<b>Get Offers</b>
+	<div class="form-row">
+        <label for="node-input-ip"><i class="icon-tag"></i> Interaction Point name</label>
+        <input type="text" id="node-input-ip" placeholder="" value="twitter">
+    </div>
+	<div class="form-row">
+        <label for="node-input-number"><i class="icon-tag"></i> Number requested</label>
+        <input type="text" id="node-input-number" placeholder="" value="1">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="Interact">
+    <p>Retrieve NBA from Interact</p>
+</script>

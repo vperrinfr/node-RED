@@ -1,0 +1,50 @@
+<script type="text/javascript">
+    RED.nodes.registerType('xtify',{
+        category: 'Mobile',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value:""},
+            apikey: {value:"9a4db126-6ae4-4f7b-9dc4-4db3e87b9993"},
+            appkey: {value:"53fff509-ec1e-49b2-b9d8-49c07cd2df62"},
+			xid: {value:"54538b361fde007c808f4bd5"},
+            subject: {value:""}
+        },
+        inputs:1,
+        outputs:0,
+        align: 'right',
+        icon: "mobile.png",
+        label: function() {
+            return this.name||"xtify";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="xtify">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <br/>
+    <div class="form-row">
+     <label for="node-input-apikey"><i class="icon-tag"></i> API Key</label>
+     <input type="text" id="node-input-apikey">
+ 	</div>
+ 	<div class="form-row">
+     <label for="node-input-appkey"><i class="icon-tag"></i> App Key</label>
+     <input type="text" id="node-input-appkey">
+ 	</div>
+	<div class="form-row">
+     <label for="node-input-xid"><i class="icon-tag"></i> Xid</label>
+     <input type="text" id="node-input-xid">
+ 	</div>
+ 	<br/>
+ 	<div class="form-row">
+     <label for="node-input-subject"><i class="icon-tag"></i> Subject</label>
+     <input type="text" id="node-input-subject">
+ 	</div>
+
+</script>
+
+<script type="text/x-red" data-help-name="xtify">
+    <p>Send Push Notif on Mobile</p>
+</script>
