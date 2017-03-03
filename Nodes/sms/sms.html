@@ -1,0 +1,65 @@
+<script type="text/javascript">
+    RED.nodes.registerType('sms',{
+        category: 'Mobile',
+        color: '#a6bbcf',
+        inputs:1,
+        defaults: {
+          name : {value:"IBM Marketing Cloud - Transactional SMS"},
+	         urlIMC : {type: "text"},
+           clientID : {type: "text"},
+           clientSecret : {type: "password"},
+           refreshToken : {type: "password"},
+           channelQualifier: {type: "text"},
+           source: {type: "text"}
+        },
+        outputs:0,
+        align: 'right',
+        icon: "mobile.png",
+        label: function() {
+            return this.name||"sms";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="sms">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="IBM Marketing Cloud - Transactional SMS">
+    </div>
+    <br/>
+    <div class="form-row">
+     <label for="node-input-apikey"><i class="icon-tag"></i> Client Id</label>
+     <input type="text" id="node-input-clientID">
+ 	</div>
+ 	<div class="form-row">
+     <label for="node-input-appkey"><i class="icon-tag"></i> Client Secret</label>
+     <input type="text" id="node-input-clientSecret">
+ 	</div>
+  <div class="form-row">
+     <label for="node-input-appkey"><i class="icon-tag"></i> Refresh Token</label>
+     <input type="text" id="node-input-refreshToken">
+ 	</div>
+  <div class="form-row">
+     <label for="node-input-appkey"><i class="icon-tag"></i> Channel Qualifier</label>
+     <input type="text" id="node-input-channelQualifier">
+ 	</div>
+  <div class="form-row">
+     <label for="node-input-appkey"><i class="icon-tag"></i> Source</label>
+     <input type="text" id="node-input-source">
+ 	</div>
+  <div class="form-row">
+     <label for="node-input-urlIMC"><i class="icon-tag"></i> url of the IMC API PoD</label>
+     <input type="text" id="node-input-urlIMC">
+  </div>
+
+</script>
+
+<script type="text/x-red" data-help-name="sms">
+    <p>Send SMS messages to contacts not required to be in your SMS Database. Mobile numbers not found in your SMS Database will be added to your SMS Database for event processing. Consent management for this API is external to IBM Marketing Cloud and is the responsibility of the API user.</p>
+    <p>The incoming message on <code>msg.payload</code>
+    <p><code>msg.payload</code> has to include that content <pre>{"number":"xxxxxxxx","message":"[message to send]"}</pre>
+<p>
+<p><b>Note:</b> The number has to be like "33xxxxxxxxx".
+<p>All SMS APIs require that Country Code is included with the SMS phone number. No <code>+</code> sign before international code
+<p><b>Note:</b> In order to retrieve OAuth tokens, read the <a target="_new" href="https://www.ibm.com/support/knowledgecenter/SSWU4L/API/imc_API/OAuth102.html">online documentation</a> for more help.</p>
+</script>
